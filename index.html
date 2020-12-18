@@ -17,6 +17,7 @@
     <h1 style="text-align: center;">Weather Dashboard</h1>
   </header> -->
   <div class="city"></div>
+  <div class="conditions"></div>
   <div class="wind"></div>
   <div class="humidity"></div>
   <div class="temp"></div>
@@ -24,26 +25,26 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script type="text/javascript">
     // This is my API key
-    var apiKey = '71fd9ac4372761cf0c6ce07b04862b3c'
-    var queryURL = 'https://api.openweathermap.org/data/2.5/forecast?q={city name},{state code},{country code}&appid=' + apiKey
+    // var apiKey = '71fd9ac4372761cf0c6ce07b04862b3c'
+    // var queryURL = 'https://api.openweathermap.org/data/2.5/forecast?q=Dallas&appid=' + apiKey
     //console.log(queryURL)
 
    //call out to ajax
-   $.ajax({
-     url: queryURL,
+  //  $.ajax({
+  //    url: queryURL,
      //method: 'GET',
-   }).then(function(response){
-     console.log(response)
-   })
+  //  }).then(function(response){
+  //    console.log(response)
+  //  })
    
      
 
  
 
     </script>
-  <!-- <br-->
-   <!--side container for entering city w/button and collect previous entries-->
-   <!-- <div class="container-fluid">
+   <br>
+     <div class="container-fluid">
+     
     <div class="row">
       <div class="col-md-3 pl-2">
        <div class="card" style="width: 22rem;">
@@ -124,8 +125,8 @@
 
       </div>
      </div>
-   </div>
-   -->
+   </div> -->
+   --> -->
 
    <!-- Add extra div for the bonus Fahrenheit temp -->
   <!-- <div class="tempF"></div> -->
