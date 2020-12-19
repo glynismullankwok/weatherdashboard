@@ -1,8 +1,43 @@
-//var cityName =
+//formation of url
+var api=  'https://api.openweathermap.org/data/2.5/forecast?q=';
+var apiKey = '71fd9ac4372761cf0c6ce07b04862b3c';
+var units = '&units=imperial';
+var input; 
+//set up city search button
+$('#search').on("click", function(event){
+    event.preventDefault();
+    var input = $("#city").val();
+    // store input values in local storage
+    localStorage.setItem("cityList", JSON.stringify(cityList));
 
-var apiKey = '71fd9ac4372761cf0c6ce07b04862b3c'
-var queryURL = 'https://api.openweathermap.org/data/2.5/forecast?q=orlando&appid=' + apiKey
+    populateCityWeatherData(input, cityList);
+    $("#current-weather").show();
+    $("#5dayforecast-weather").show();
+});
+$("#cities").on("click", "button", function(event){
+    event.preventDefault();
+    var city = $(this).text();
+    populateCityWeatherData(input, cityList);
+    $("#current-weather").show();
+    $("#5dayforecast-weather").show();
+});
+//set up loop for city list
+function createSearchList(cityList){
+    $("#cities").empty();
+    var list = Object.list(searchList);
+    for (var i = 0; i < list.length; i++){
+        var cityName = $("<button>");
+        cityName.addClass("list-group-item list-group-item-action");
+    };
+    $("#cities").append(cityName);
+}
 
+
+
+
+function weatherData(){
+    var queryURL = api + apiKey + input.value() + units
+}
 $.ajax({
     url: queryURL,
     method: 'GET'

@@ -1,4 +1,4 @@
-<!DOCTYPE html>     
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,133 +9,105 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
     integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
   <link rel="stylesheet" href="style.css" />
-  
+
   <title>Weather Dashboard</title>
 </head>
 <body>
-  <!-- <header class="jumbotron">
+  <header class="jumbotron">
     <h1 style="text-align: center;">Weather Dashboard</h1>
-  </header> -->
-  <div class="city"></div>
-  <div class="conditions"></div>
-  <div class="wind"></div>
-  <div class="humidity"></div>
-  <div class="temp"></div>
-  <div class="uv"></div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript">
-    // This is my API key
-    // var apiKey = '71fd9ac4372761cf0c6ce07b04862b3c'
-    // var queryURL = 'https://api.openweathermap.org/data/2.5/forecast?q=Dallas&appid=' + apiKey
-    //console.log(queryURL)
+  </header>
+  <!-- Used bootstrap to style the dashboard -->
+  <br>
+  <div class="container-fluid">
 
-   //call out to ajax
-  //  $.ajax({
-  //    url: queryURL,
-     //method: 'GET',
-  //  }).then(function(response){
-  //    console.log(response)
-  //  })
-   
-     
-
- 
-
-    </script>
-   <br>
-     <div class="container-fluid">
-     
     <div class="row">
       <div class="col-md-3 pl-2">
-       <div class="card" style="width: 22rem;">
-           <div class="card-body">
+        <div class="card" style="width: 22rem;">
+          <div class="card-body">
             <h6>Search for a city:</h6>
             <form class="form-inline">
-             <div class="form-group">
-                <input type="text" class="form-control" id="city-input">
+              <div class="form-group">
+                <input type="text" class="form-control" id="city">
               </div>
-              <button id="search-button" type="submit" class="btn btn-primary"></button>
+              <button id="search" type="button" class="btn btn-primary"></button>
               <i class="fas fa-search"></i>
-             </form>
+            </form>
           </div>
         </div>
       </div>
-       <ul class="list-group" id="city-list"></ul>
+      <ul class="list-group" id="cities"></ul>
     </div>
-   </div>
-   <div class="col-md-9">
-     <div id="current-weather" class="card">
+  </div>
+  <div class="col-md-9">
+    <div id="current-weather" class="card">
       <div class="card-body">
         <div id="city-date-icon">
           <span id="city-name"></span>
-         <span id="current-icon"></span>
+          <span id="current-icon"></span>
         </div>
-       <p class="card-text" id="current-temp"></p>
-       <p class="card-text" id="current-humidity"></p>
-       <p class="card-text" id="current-wind"></p>
+        <p class="card-text" id="current-temp"></p>
+        <p class="card-text" id="current-humidity"></p>
+        <p class="card-text" id="current-wind"></p>
         <p class="card-text" id="current-uv"></p>
-      </ul>
+        </ul>
       </div>
     </div>
-     <div class="row">
-       <div id="forecast-weather" class="col-md-9">
+    <div class="row">
+      <div id="5dayforecast-weather" class="col-md-9">
         <h4>5-day Forecast</h4>
-       <div id="forecast-cards">
-         <div class="card forecast">
-          <div id="forecast1" class="card-body">
+        <div id="forecast-cards">
+          <div class="card forecast">
+            <div id="forecast1" class="card-body">
               <span class="card-title" id="forecast-date1"></span>
-            <span id="forecast-icon1"></span>
-            <p class="card-text" id="forecast-temp1"></p>
-            <p class="card-text" id="forecast-humidity1"></p>
+              <span id="forecast-icon1"></span>
+              <p class="card-text" id="forecast-temp1"></p>
+              <p class="card-text" id="forecast-humidity1"></p>
+            </div>
           </div>
-           </div>
-         <div class="card forecast">
+          <div class="card forecast">
             <div id="forecast2" class="card-body">
               <span class="card-title" id="forecast-date2"></span>
-             <span id="forecast-icon2"></span>
-             <p class="card-text" id="forecast-temp2"></p>
-            <p class="card-text" id="forecast-humidity2"></p>
-           </div>
-        </div>
-          <div class="card forecast">
-         <div id="forecast3" class="card-body">
-               <span class="card-title" id="forecast-date3"></span>
-              <span id="forecast-icon3"></span>
-            <p class="card-text" id="forecast-temp3"></p>
-             <p class="card-text" id="forecast-humidity3"></p>
+              <span id="forecast-icon2"></span>
+              <p class="card-text" id="forecast-temp2"></p>
+              <p class="card-text" id="forecast-humidity2"></p>
             </div>
-         </div>
-         <div class="card forecast">
-           <div id="forecast4" class="card-body">
+          </div>
+          <div class="card forecast">
+            <div id="forecast3" class="card-body">
+              <span class="card-title" id="forecast-date3"></span>
+              <span id="forecast-icon3"></span>
+              <p class="card-text" id="forecast-temp3"></p>
+              <p class="card-text" id="forecast-humidity3"></p>
+            </div>
+          </div>
+          <div class="card forecast">
+            <div id="forecast4" class="card-body">
               <span class="card-title" id="forecast-date4"></span>
-             <span id="forecast-icon4"></span>
-             <p class="card-text" id="forecast-temp4"></p>
+              <span id="forecast-icon4"></span>
+              <p class="card-text" id="forecast-temp4"></p>
               <p class="card-text" id="forecast-humidity4"></p>
             </div>
-        </div>
-           <div class="card forecast">
+          </div>
+          <div class="card forecast">
             <div id="forecast5" class="card-body">
-               <span class="card-title" id="forecast-date5"></span>
+              <span class="card-title" id="forecast-date5"></span>
               <span id="forecast-icon5"></span>
               <p class="card-text" id="forecast-temp5"></p>
               <p class="card-text" id="forecast-humidity5"></p>
             </div>
           </div>
-         </div> -->
+        </div>
 
       </div>
-     </div>
-   </div> -->
-   --> -->
+    </div>
+  </div>
 
-   <!-- Add extra div for the bonus Fahrenheit temp -->
-  <!-- <div class="tempF"></div> -->
 
-  
-    
-    
- </script>
-  
+
+
+
+  </script>
+
   <script src="script.js"></script>
 </body>
 
