@@ -13,4 +13,7 @@ This is a website that uses Open Weather Map API to provide current weather as w
 # Technologies
 HTML,  CSS,  JQuery,  Bootstrap,  Font awesome, Open Weather Map API
 
-#Website Deploy Link
+
+# Website Deploy Link
+
+https://glynismullankwok.github.io/weatherdashboard/
