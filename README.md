@@ -8,7 +8,7 @@ This is a website that uses Open Weather Map API to provide current weather as w
 
 # Weather Dashboard Image
 
-![weather](assets/img/weather.png)
+<img width="1792" alt="weather" src="https://user-images.githubusercontent.com/70453836/111052487-1376a400-8429-11eb-9887-14023de1714b.png">
 
 # Technologies
 HTML,  CSS,  JQuery,  Bootstrap,  Font awesome, Open Weather Map API
